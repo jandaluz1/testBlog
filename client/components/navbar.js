@@ -9,18 +9,16 @@ const Navb = ({handleClick, isLoggedIn}) => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="/">My Blog</a>
+        <a href="/home">My Blog</a>
       </Navbar.Brand>
     </Navbar.Header>
     {isLoggedIn ? (
-      <Nav>
-        <NavItem href="#home">Home</NavItem>
-        <NavItem pullright onClick={handleClick}>
-          Logout
-        </NavItem>
+      <Nav pullRight>
+        <NavItem href="/home">Home</NavItem>
+        <NavItem onClick={handleClick}>Logout</NavItem>
       </Nav>
     ) : (
-      <Nav>
+      <Nav pullRight>
         <NavItem href="/login">Login</NavItem>
         <NavItem href="/signup">Sign Up</NavItem>
       </Nav>
@@ -50,7 +48,7 @@ export default connect(mapState, mapDispatch)(Navb)
 /**
  * PROP TYPES
  */
-Navbar.propTypes = {
-  handleClick: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
-}
+// Navbar.propTypes = {
+//   handleClick: PropTypes.func.isRequired,
+//   isLoggedIn: PropTypes.bool.isRequired
+// }
